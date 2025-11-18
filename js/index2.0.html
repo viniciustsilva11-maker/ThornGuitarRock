@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>História das Guitarras - One Page</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/main.js"></script>
+
+  <!-- Estilos específicos apenas para a seção Frankstrat (Van Halen) -->
+  <style>
+    :root{
+      --vh-red: #d62828;
+      --vh-black: #000000;
+      --vh-gold: #d4af37;
+    }
+
+    /* Estilos para a seção Frankstrat (preenchida, maior, bloco preto à esquerda, título dourado neon) */
+    .frankstrat-section{
+      width:100%;
+      background: linear-gradient(180deg, var(--vh-red), #c22222);
+      color: var(--vh-black);
+      padding: 72px 0; /* destacado, maior altura */
+      margin: 36px 0;
+    }
+
+    .frankstrat-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 16px;
+      display:flex;
+      gap:32px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+
+    .frankstrat-photo{
+      flex:0 0 44%;
+      min-width:260px;
+      height:64vh; /* ocupa mais altura da tela para destaque */
+      max-height:820px;
+      background: var(--vh-black); /* bloco preto reservado para imagem */
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    }
+    .frankstrat-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .frankstrat-content{
+      flex:1 1 48%;
+      min-width:300px;
+      color: var(--vh-black);
+      background: rgba(255,255,255,0.02);
+      padding:28px;
+      border-radius:8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .frankstrat-content h2{
+      margin:0 0 16px;
+      font-size:2.6rem;
+      color: var(--vh-gold);
+      font-weight:900;
+      letter-spacing:1px;
+      /* efeito "neon" dourado */
+      text-shadow:
+        0 0 8px rgba(212,175,55,0.95),
+        0 0 20px rgba(212,175,55,0.65),
+        0 8px 30px rgba(0,0,0,0.6);
+      line-height:1.02;
+    }
+
+    .frankstrat-content p{
+      margin:0 0 12px;
+      font-size:1.05rem;
+      color: var(--vh-black);
+    }
+
+    @media (max-width:1100px){
+      .frankstrat-photo{flex-basis:100%; height:48vh;}
+      .frankstrat-content{flex-basis:100%;}
+      .frankstrat-content h2{font-size:2rem;}
+      .frankstrat-section{padding:42px 0;}
+    }
+    @media (max-width:520px){
+      .frankstrat-photo{height:36vh;}
+      .frankstrat-content h2{font-size:1.6rem;}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">THORN</div>
+      <nav class="main-nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#modelos">Modelos</a>
+        <a href="#contato" class="btn-login">Login</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / BANNER -->
+    <section id="home" class="hero">
+      <div class="hero-inner container">
+        <div class="hero-left">
+          <!-- Espaço para imagem grande de banner: substitua img/img1.png -->
+          <img src="img/imgbanner.png" alt="Banner - troque por sua imagem" class="hero-image" />
+        </div>
+        <div class="hero-right">
+          <h1>THORN GUITAR ROCK</h1>
+          <p class="hero-sub">Conheça a origem, evolução e curiosidades dos modelos que marcaram a música.</p>
+          <a href="#modelos" class="btn primary">Ver Modelos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE DESTAQUE COM 3 IMAGENS -->
+    <section id="sobre" class="highlight container">
+      <h2 class="center">Conheça os modelos que fizeram histórias com os heróis da guitarra</h2>
+      <p class="center-sub">Descubra sobre a história de modelos icônicos de guitarra que se tornaram lendas na mão de verdadeiros astros</p>
+      <div class="three-up" aria-hidden="true">
+        <div class="card">
+          <img src="img/img.png" alt="Imagem 1 - troque aqui" />
+        </div>
+        <div class="card center-card">
+          <img src="img/imgmeio.png" alt="Imagem 2 - troque aqui" />
+        </div>
+        <div class="card">
+          <img src="img/imgg.png" alt="Imagem 3 - troque aqui" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MODELOS -->
+    <section id="modelos" class="models container">
+      <div class="models-inner">
+        <h2>ESCOLHA UM MODELO</h2>
+        <p class="models-sub">Clique na foto para abrir a história do modelo</p>
+
+        <div class="model-grid" role="list">
+          <!-- Modelo 1 -->
+          <article class="model-card" role="listitem">
+            <button class="model-toggle" aria-expanded="false" aria-controls="story-lespaul">
+              <img src="img/lespaul.png" alt="Les Paul" />
+            </button>
+            <h3>Les Paul</h3>
+            <div id="story-lespaul" class="model-story" aria-hidden="true">
+              <p>
+                A Les Paul, desenvolvida pela Gibson na década de 1950 em parceria com o guitarrista e inventor Les Paul,
+                tornou-se um ícone do rock e do blues. Conhecida pelo corpo sólido, som encorpado e sustain longo,
+                foi usada por lendas como Jimmy Page e Slash. Ao longo do tempo, sofreu diversas variações e continua
+                sendo um símbolo de timbre quente e presença nas gravações.
+              </p>
+            </div>
+          </article>
+
+          <!-- Modelo 2 -->
+          <article class="model-card" role="listitem">
+            <button class="model-toggle" aria-expanded="false" aria-controls="story-strato">
+              <img src="img/imgstrat.png" alt="Stratocaster" />
+            </button>
+            <h3>Stratocaster</h3>
+            <div id="story-strato" class="model-story" aria-hidden="true">
+              <p>
+                A Fender Stratocaster foi lançada em 1954 e revolucionou o design com seu corpo contornado, três captadores
+                single-coil e ponte tremolo. Guitarristas como Jimi Hendrix, Eric Clapton e David Gilmour
+                popularizaram seu som brilhante e versátil, tornando a Strat uma escolha favorita em vários gêneros.
+              </p>
+            </div>
+          </article>
+
+          <!-- Modelo 3 -->
+          <article class="model-card" role="listitem">
+            <button class="model-toggle" aria-expanded="false" aria-controls="story-flyingv">
+              <img src="img/v.png" alt="Flying V" />
+            </button>
+            <h3>Flying V</h3>
+            <div id="story-flyingv" class="model-story" aria-hidden="true">
+              <p>
+                Introduzida pela Gibson em 1958, a Flying V apresentou um design futurista que só anos depois
+                ganhou ampla aceitação no rock e heavy metal. Sua silhouette agressiva e som cortante foram adotados
+                por guitarristas que buscavam presença visual e ataque sonoro, como Albert King e lateramente por muitas bandas de metal.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO ESPECIAL: FRANKSTRAT / VAN HALEN -->
+    <section id="frankstrat" class="frankstrat-section" aria-labelledby="frankstrat-title">
+      <div class="frankstrat-inner">
+        <div class="frankstrat-photo" aria-hidden="false">
+          
+          <img id="vanImage" src="img/vh.jpg" alt="Eddie Van Halen">
+        </div>
+
+        <div class="frankstrat-content">
+          <h2 id="frankstrat-title">Frankstrat — a guitarra de Eddie Van Halen</h2>
+
+          <p>
+            A "Frankenstrat" (ou Frankstrat) é a guitarra construída e customizada por Eddie Van Halen no final dos anos 1970.
+            Eddie juntou partes de diferentes instrumentos — um corpo estilo Strat com componentes escolhidos por ele — e instalou
+            captadores e ajustes específicos para conquistar o som agressivo, sustain e resposta que definiu seu estilo.
+          </p>
+
+          <p>
+            Visualmente tornou-se uma lenda: a pintura vermelha com o bloco preto e listras (aqui realçada com o fundo vermelho preenchido
+            e o bloco preto reservado à esquerda) foi feita à mão e passou a ser imediatamente associada ao guitarrista. A Frankstrat
+            também ficou famosa pelas modificações práticas e pelo papel que teve na popularização de técnicas como o tapping de duas mãos
+            e o uso expressivo da alavanca (whammy).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function(){
+        const VAN_IMAGE_FILENAME = 'vanhalen.jpg';
+
+        function setVanImage(filename){
+          const img = document.getElementById('vanImage');
+          if(!img) return;
+          img.src = 'img/vh.jpg' + filename;
+          img.alt = 'Eddie Van Halen';
+        }
+
+        if(document.getElementById('vanImage')){
+          document.getElementById('vanImage').src = 'img/vh.jpg' ;
+        }
+
+        window.setVanImage = setVanImage;
+      })();
+    </script>
+
+  </main>
+</body>
+</html>
